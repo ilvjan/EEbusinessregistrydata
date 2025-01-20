@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
-const csvtojson = require('./csvtojson.js');
-const readjson3 = require('./readjson3.js');
+const csvtojson = require('./basicdatadownload');
+const readjson3 = require('./generaldatadownload.js');
 
 
 
@@ -77,22 +77,15 @@ function dbliteconnection() {
 
 
 
-
-
-
-
   readjson3()
       .then((objektid) => {
           db.run("BEGIN TRANSACTION;");
           objektid.forEach((element, index, array) => {
-              if (index < 50000) {
-                  console.log(index);
               console.log(element);
               const data = Object.values(element);
               const insertStatement = db.prepare("UPDATE ettevotte_info SET (email, www, mob) = (?, ?, ?) WHERE (ariregistri_kood) = (?) ");
               insertStatement.run(data[2], data[4], data[3], data[0]);
               insertStatement.finalize();
-          }
           });
             console.log("Running DB run");
           db.run("END;", () =>

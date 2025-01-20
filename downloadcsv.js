@@ -14,6 +14,7 @@ module.exports = function (this_url, this_filepath, this_result) {
   
 
   /**
+   * Source: https://stackoverflow.com/questions/27483090/how-to-download-a-file-with-node-js-using-https
    * Downloads file from remote HTTP[S] host and puts its contents to the
    * specified location.
    */
@@ -56,6 +57,11 @@ module.exports = function (this_url, this_filepath, this_result) {
     });
 
   }
+
+  /*
+
+  Source: https://stackoverflow.com/questions/69665329/zip-archive-with-nested-folder-inside-does-not-unzip-with-yauzl
+   */
 
   function unzip (){
     return new Promise((resolve, reject) => {

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const fs = require('fs');
-const { findcompanies, getcompanies } = require('../companiesscript.js');
+const { findcompanies, getcompanies } = require('../dataforAPIroutes');
 
 
 /* GET home page. */

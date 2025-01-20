@@ -8,7 +8,7 @@ module.exports = function () {
 
   const csvtojson = new Promise((resolve, reject) => {
 
-    downloadcsv('https://avaandmed.ariregister.rik.ee/sites/default/files/avaandmed/ettevotja_rekvisiidid__lihtandmed.csv.zip','ettevotja_rekvisiidid__lihtandmed.zip','ettevotja_rekvisiidid__lihtandmed.csv' )
+    downloadcsv('https://avaandmed.ariregister.rik.ee/sites/default/files/avaandmed/ettevotja_rekvisiidid__lihtandmed.csv.zip','.ettevotja_rekvisiidid__lihtandmed.zip','ettevotja_rekvisiidid__lihtandmed.csv' )
       .then((path) => {
         //'./dist/ettevotja_rekvisiidid__lihtandmed.csv'
         let data = fs.readFileSync(path)

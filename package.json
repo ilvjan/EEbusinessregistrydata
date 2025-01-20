@@ -1,0 +1,23 @@
+{
+  "name": "krediidiinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "krediidiinfo": "bin/www.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "big-json": "^3.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.1.7",
+    "yauzl": "^3.2.0"
+  }
+}

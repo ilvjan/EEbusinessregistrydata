@@ -22,6 +22,7 @@ module.exports = function (this_url, this_filepath, this_result) {
     const proto = !url.charAt(4).localeCompare('s') ? https : http;
 
     return new Promise((resolve, reject) => {
+      console.log("Laen alla faili " + filePath);
       const file = fs.createWriteStream(filePath);
       let fileInfo = null;
 
@@ -63,8 +64,9 @@ module.exports = function (this_url, this_filepath, this_result) {
   Source: https://stackoverflow.com/questions/69665329/zip-archive-with-nested-folder-inside-does-not-unzip-with-yauzl
    */
 
-  function unzip (){
+  function unzip (filePath){
     return new Promise((resolve, reject) => {
+      console.log("Pakin lahti faili " + filePath);
     let writeStream = fs.createWriteStream("./" + folder + "/" + result);
   yauzl.open(filePath, {lazyEntries: true}, function(err, zipfile) {
     if (err) throw err;
@@ -97,10 +99,11 @@ module.exports = function (this_url, this_filepath, this_result) {
   return new Promise(function (resolve, reject) {
     download(url, filePath)
       .then(() => {
-        console.log("Allalaetud");
+        console.log("Fail " + filePath + " allalaetud");
         //decompress(filePath, folder)
-        unzip()
+        unzip(filePath)
           .then(() => {
+            console.log("Fail " + filePath + " lahtipakitud");
             resolve("./" + folder + "/" + result);
           })
           .catch((error) => {

@@ -8,3 +8,7 @@ Makes the Estonian e-business registry open data available through API endpoints
 
 Takes about 5 minutes.
 
+How to run:
+1. npm install
+2. node dbliteconnection.js
+
